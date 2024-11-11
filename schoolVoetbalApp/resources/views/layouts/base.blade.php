@@ -12,7 +12,7 @@
 <h1>hoi</h1>
         </div>
     </header>
-    <main>
+    {{-- <main>
         <div class="">
             <h1>Wedstrijden</h1>
             <div class="wedstrijden">
@@ -30,7 +30,8 @@
                 </table>
             </div>
         </div>
-    </main>
+    </main> --}}
+{{ $slot }}
     <footer>
         <div class="upperFooter">
                 <div class="logoFooter">
