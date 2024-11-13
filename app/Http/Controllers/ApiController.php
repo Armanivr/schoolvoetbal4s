@@ -13,8 +13,10 @@ class ApiController extends Controller
         return response()->json($matches);
     }
     public function getData(){
-        $response = Http::get('http://schoolvoetbal4s.test/api/matches');
+        $response = Http::withHeader('Authorization', env('API_KEY'))->get('http://schoolvoetbal4s.test/api/secure/matches');
         $data = $response->json();
-        dd($data);
+        foreach($data as $match){
+        dd($match);
+        }
     }
 }
