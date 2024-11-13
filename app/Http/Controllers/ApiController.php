@@ -12,4 +12,9 @@ class ApiController extends Controller
         $matches = Matcch::all();
         return response()->json($matches);
     }
+    public function getData(){
+        $response = Http::get('http://schoolvoetbal4s.test/api/matches');
+        $data = $response->json();
+        dd($data);
+    }
 }

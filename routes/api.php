@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/movies', [ApiController::class, 'listMovies']);
+Route::get('/matches', [ApiController::class, 'myMatches']);
 
-Route::middleware('api.token')->get('/secure/movies', [ApiController::class, 'listMovies']);
+Route::middleware('api.token')->get('/secure/myMatches', [ApiController::class, 'myMatches']);
