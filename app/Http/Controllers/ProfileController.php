@@ -14,13 +14,13 @@ class ProfileController extends Controller
 
     /**
      * login
-     */
-    public function login(Request $request){
-        $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
-        $user = $request->all();
-        Auth::attempt($user);
-        return redirect('/');
-    }
+      */
+    // public function login(Request $request){
+    //     $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
+    //     $user = $request->all();
+    //     Auth::attempt($user);
+    //     return redirect('/');
+    // }
 
     /**
      * Display the user's profile form.
