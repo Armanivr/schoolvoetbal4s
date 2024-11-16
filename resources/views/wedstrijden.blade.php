@@ -10,10 +10,13 @@
                     <tr>Team2</tr>
                 </th>
                 <!-- making a foreachloop -->
+                @foreach ($matches as $match)
                 <td>
-                    <tr></tr>
-                    <tr></tr>
+                    <tr>{{ $match['team1'] }} VS </tr>
+                    <tr> {{ $match['team2'] }}</tr>
                 </td>
+                @endforeach
+
             </table>
         </div>
         <div>

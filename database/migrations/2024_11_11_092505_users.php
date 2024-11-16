@@ -12,6 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         //
+        Schema::create('personal_access_tokens', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamp('last_used_at')->nullable();
+            $table->timestamp('expires_at')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
