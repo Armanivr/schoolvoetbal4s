@@ -17,7 +17,7 @@
                 <a href="">Regristeren</a>
             @endguest
             @auth
-                <a href="">Logout</a>
+                <a href="profile.destroy">Logout</a>
             @endauth
         </nav>
     </header>
