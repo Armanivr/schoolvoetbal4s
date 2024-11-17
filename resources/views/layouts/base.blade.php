@@ -11,6 +11,15 @@
         <div class="logo">
 <h1>hoi</h1>
         </div>
+        <nav>
+            @guest
+                <a href="">Inloggen</a>
+                <a href="">Regristeren</a>
+            @endguest
+            @auth
+                <a href="">Logout</a>
+            @endauth
+        </nav>
     </header>
     {{-- <main>
         <div class="">
