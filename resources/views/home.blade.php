@@ -24,6 +24,7 @@
                 <tr>Team2</tr>
             </th>
             <!-- making a foreachloop -->
+
             <td>
                 <tr></tr>
                 <tr></tr>
