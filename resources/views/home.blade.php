@@ -24,11 +24,13 @@
                 <tr>Team2</tr>
             </th>
             <!-- making a foreachloop -->
-
+            @foreach ($matches as $match)
             <td>
-                <tr></tr>
-                <tr></tr>
+                <tr>{{ $match->teams[0]->name }}</tr>
+                <tr>{{ $match->teams[1]->name }}</tr>
             </td>
+            @endforeach
+
         </table>
     </div>
 </div>
