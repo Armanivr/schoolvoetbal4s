@@ -18,7 +18,7 @@ class GameController extends Controller
     foreach ($teams as $teamA) {
         foreach ($teams as $teamB) {
             if ($teamA->id < $teamB->id) {
-                $match = Matchh::create();
+                $match = Game::create();
                 $match->teams()->attach([$teamA->id, $teamB->id]);
             }
         }
