@@ -8,15 +8,15 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
     //
-    public function myMatches(){
-        $matches = Matcch::all();
-        return response()->json($matches);
+    public function myGames(){
+        $games = Game::all();
+        return response()->json($games);
     }
     public function getData(){
-        $response = Http::withHeader('Authorization', env('API_KEY'))->get('http://schoolvoetbal4s.test/api/secure/matches');
+        $response = Http::withHeader('Authorization', env('API_KEY'))->get('http://schoolvoetbal4s.test/api/secure/games');
         $data = $response->json();
-        foreach($data as $match){
-        dd($match);
+        foreach($data as $game){
+        dd($game);
         }
     }
 }

@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/matches', [ApiController::class, 'myMatches']);
+Route::get('/games', [ApiController::class, 'myGames']);
 
-Route::middleware('api.token')->get('/secure/myMatches', [ApiController::class, 'myMatches']);
+Route::middleware('api.token')->get('/secure/myGames', [ApiController::class, 'myGames']);

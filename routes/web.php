@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/goalpage', [GoalController::class, 'index'])->middleware('auth');
 Route::get('/getdata', [ApiController::class, 'getdata'])->middleware('auth');
 require __DIR__.'/auth.php';
-Route::get('/home', [MatchController::class, 'matches'])->middleware('auth')->name('home');
+Route::get('/home', [GameController::class, 'games'])->middleware('auth')->name('home');
 
 Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->middleware('auth')->name('AddGoal');
 Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->middleware('auth')->name('UpdateGoal');
