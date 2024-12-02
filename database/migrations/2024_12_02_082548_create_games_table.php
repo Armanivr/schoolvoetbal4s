@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('matches', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('team1');
             $table->string('team2');
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('games');
     }
 };

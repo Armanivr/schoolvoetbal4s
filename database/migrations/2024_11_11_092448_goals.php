@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('', function (Blueprint $table) {
+        Schema::create('goals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamp('last_used_at')->nullable();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Matcch;
+use App\Models\Game;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
