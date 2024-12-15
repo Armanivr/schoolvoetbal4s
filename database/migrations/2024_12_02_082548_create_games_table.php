@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('team1');
-            $table->string('team2');
+            $table->string('team1_id');
+            $table->string('team1_name');
+            $table->string('team2_id');
+            $table->string('team2_name');
+            $table->string('winner_id');
             $table->timestamps();
         });
     }
