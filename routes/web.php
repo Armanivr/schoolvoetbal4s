@@ -29,16 +29,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/goalpage', [GoalController::class, 'index']);
+    Route::get('/getdata', [ApiController::class, 'getdata']);
+    Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->name('AddGoal');
+    Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->name('UpdateGoal');
+
+    //homepage
+    Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
+    Route::get('/inschrijven', [PagesController::class, 'register'])->name('register');
 });
-Route::get('/goalpage', [GoalController::class, 'index'])->middleware('auth');
-Route::get('/getdata', [ApiController::class, 'getdata'])->middleware('auth');
+
 require __DIR__.'/auth.php';
-
-Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->middleware('auth')->name('AddGoal');
-Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->middleware('auth')->name('UpdateGoal');
-
-//homepage view
-
-Route::get('/wedstrijden', [PagesController::class, 'matches'])->middleware('auth')->name('matches');
-
-Route::get('/inschrijven', [PagesController::class, 'register'])->middleware('auth')->name('register');
