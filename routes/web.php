@@ -31,9 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/goalpage', [GoalController::class, 'index']);
-    Route::get('/getdata', [ApiController::class, 'getdata']);
-    Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->name('AddGoal');
-    Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->name('UpdateGoal');
+    Route::get('/getdata', [ApiController::class, 'getdata'])->middleware('auth');
+    Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->name('AddGoal')->middleware('auth');
+    Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->name('UpdateGoal')->middleware('auth');
 
     //homepage
     Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
