@@ -1,49 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-header{
-    padding: 2.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-footer{
-    display: flex;
-    flex-direction: column;
-}
-.upperFooter{
-    display: flex;
-    justify-content: space-around;
-}
-nav{
-    display: flex;
-    justify-content: space-around;
-    width: 100px;
-}
-nav a, a{
-    text-decoration: none;
-}
-.logos{
-    display: flex;
-    justify-content: space-around;
-    width: 100px;
-}
-.underFooter{
-    display: flex;
-    justify-content: center;
-}
-.underFooterText{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    width: 400px;
-    size: small;
 
-}
-.superNavX{
-    display: none;
-}
 @media  only screen and (max-width: 600px)  {
     .underFooter{
         display: none;

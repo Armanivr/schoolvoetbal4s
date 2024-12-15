@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\PagesController;
@@ -20,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index'])->middleware('auth')->name('home');
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -36,3 +36,9 @@ require __DIR__.'/auth.php';
 
 Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->middleware('auth')->name('AddGoal');
 Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->middleware('auth')->name('UpdateGoal');
+
+//homepage view
+
+Route::get('/wedstrijden', [PagesController::class, 'matches'])->middleware('auth')->name('matches');
+
+Route::get('/inschrijven', [PagesController::class, 'register'])->middleware('auth')->name('register');

@@ -4,72 +4,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://kit.fontawesome.com/a781d73fe4.js" crossorigin="anonymous"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-<h1>hoi</h1>
-        </div>
-        <nav>
+    <header class="bg-[#1F7A8C] shadow-md shadow-gray-400 flex justify-evenly items-center border-b border-[#1f7a8ce5] p-2 fixed w-[100%]">
+        <img src="{{ asset('images/balplein_full.png') }}" alt="balplein" class="h-18">
+        {{-- <nav class="">
             @guest
-                <a href="">Inloggen</a>
-                <a href="">Regristeren</a>
+                <a href="" class="py-2 px-5 text-[#022B3A] hover:text-[#FFFFFF] bg-[#FFFFFF] hover:bg-[#022B3A] hover:scale-90 transition-all ease-in-out delay-20 rounded-sm mx-2 hover:underline">Inloggen</a>
+                <a href="" class="py-2 px-5 text-[#022B3A] hover:text-[#FFFFFF] bg-[#FFFFFF] hover:bg-[#022B3A] hover:scale-90 transition-all ease-in-out delay-20 rounded-sm mx-2 hover:underline">Registreren</a>
             @endguest
             @auth
-                <a href="profile.destroy">Logout</a>
+                <a href="profile.destroy" class="py-2 px-5 text-[#022B3A] hover:text-[#FFFFFF] bg-[#FFFFFF] hover:bg-[#022B3A] hover:scale-90 transition-all ease-in-out delay-20 rounded-sm mx-2 hover:underline">Logout</a>
             @endauth
-        </nav>
+        </nav> --}}
     </header>
-    {{-- <main>
+    <div class="h-[10%]"></div>
+    <main>
+        {{ $slot }}
+    </main>
+    <footer class="bg-[#1F7A8C] shadow-md shadow-gray-400 flex justify-evenly items-center border-t p-2 text-white fixed bottom-0 w-full">
+        
         <div class="">
-            <h1>Wedstrijden</h1>
-            <div class="wedstrijden">
-                <p>hoi</p>
-                <table>
-                    <tr>
-                        <th>Team1</th>
-                        <th>Team2</th>
-                    </tr>
-                    <tr>
-                        <td>hoi</td>
-                        <td>.</td>
-                        <td>hoi</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </main> --}}
-{{ $slot }}
-    <footer>
-        <div class="upperFooter">
-                <div class="logoFooter">
-<h1>hoi</h1>
-                </div>
-                <a href="" class="superNavX">q</a>
-                <a href="" class="superNavX">q</a>
-                <a href="" class="superNavX">q</a>
-                <a href="" class="superNavX">q</a>
-                <nav>
-                    <a href="">q</a>
-                    <a href="">q</a>
-                    <a href="">q</a>
-                    <a href="">q</a>
-                </nav>
-                <div class="logos">
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                </div>
-        </div>
-        <div class="underFooter">
-            <div class="underFooterText">
-                <p>&copy; 2024 Football. All rights</p>
+            <div class="">
+                <p>&copy; 2024 BalPlein. All rights</p>
                 <p>Privacy Policy</p>
                 <p>Terms of Service</p>
             </div>
         </div>
-
     </footer>
 </body>
-</html>
+</html

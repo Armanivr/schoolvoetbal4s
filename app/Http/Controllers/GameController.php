@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -18,7 +20,7 @@ class GameController extends Controller
     foreach ($teams as $teamA) {
         foreach ($teams as $teamB) {
             if ($teamA->id < $teamB->id) {
-                $match = Matchh::create();
+                $match = Game::create();
                 $match->teams()->attach([$teamA->id, $teamB->id]);
             }
         }
