@@ -2,9 +2,9 @@
     <body class="bg-E1E5F2 min-h-screen flex flex-col">
         <main class="flex-grow flex items-center justify-center p-4">
             <div class="bg-white shadow-md rounded-lg p-6 max-w-4xl w-full">
-            <h1 class="text-2xl font-bold mb-4 text-022B3A">Team aanmelden</h1>
+            <h1 class="text-2xl font-bold mb-4 text-022B3A">Speler aanmelden</h1>
 
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-4" action="{{ route('addTeam') }}" method="POST">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-4" action="{{ route('addMember') }}" method="POST">
                 @csrf
                 <div class="space-y-4">
                 {{-- <div>
@@ -24,13 +24,10 @@
                     <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
                 </div>
                 <div>
-                    <label for="hometown" class="block text-sm font-medium text-022B3A">Hometown:</label>
-                    <input type="text" id="hometown" name="hometown" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                    <label for="hometown" class="block text-sm font-medium text-022B3A">Team Id:</label>
+                    <input type="text" id="team_id" name="team_id" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
                 </div>
-                <div>
-                    <label for="goals" class="block text-sm font-medium text-022B3A">Goals:</label>
-                    <input type="text" id="goals" name="goals" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
-                </div>
+
 
                 {{-- <div>
                     <label for="team-members" class="block text-sm font-medium text-022B3A">Teamleden:</label>
