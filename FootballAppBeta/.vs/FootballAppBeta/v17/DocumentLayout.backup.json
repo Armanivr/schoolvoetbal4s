@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\apireader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\apireader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\putmoney.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\putmoney.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -31,10 +39,6 @@
       "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\winnerlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\apireader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\apireader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -45,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|solutionrelative:footballappbeta\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDC94048-CC38-4354-873A-7090C9EF1F64}|FootballAppBeta\\FootballAppBeta.csproj|c:\\users\\martw\\riderprojects\\footballappbeta\\footballappbeta\\info.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -78,11 +78,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "WinnerList.xaml.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\WinnerList.xaml.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\WinnerList.xaml.cs",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "WinnerList.xaml",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\WinnerList.xaml",
               "RelativeDocumentMoniker": "FootballAppBeta\\WinnerList.xaml",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "balance.txt",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\balance.txt",
               "RelativeDocumentMoniker": "FootballAppBeta\\balance.txt",
@@ -144,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Gambling.xaml",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\Gambling.xaml",
               "RelativeDocumentMoniker": "FootballAppBeta\\Gambling.xaml",
@@ -156,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "MyDbContext.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\MyDbContext.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\MyDbContext.cs",
@@ -164,23 +164,25 @@
               "RelativeToolTip": "FootballAppBeta\\MyDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T19:30:22.61Z"
+              "WhenOpened": "2024-12-06T19:30:22.61Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "ApiReader.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\ApiReader.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\ApiReader.cs",
               "ToolTip": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\ApiReader.cs",
               "RelativeToolTip": "FootballAppBeta\\ApiReader.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwFUAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T19:08:31.199Z"
+              "WhenOpened": "2024-12-06T19:08:31.199Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PutMoney.xaml",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\PutMoney.xaml",
               "RelativeDocumentMoniker": "FootballAppBeta\\PutMoney.xaml",
@@ -193,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Gambling.xaml.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\Gambling.xaml.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\Gambling.xaml.cs",
@@ -205,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PutMoney.xaml.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\PutMoney.xaml.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\PutMoney.xaml.cs",
@@ -217,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GamblingTurn.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\GamblingTurn.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\GamblingTurn.cs",
@@ -254,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\MainWindow.xaml",
               "RelativeDocumentMoniker": "FootballAppBeta\\MainWindow.xaml",
@@ -278,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "FootballAppBeta\\MainWindow.xaml.cs",

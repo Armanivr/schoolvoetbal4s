@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj": {}
+    "C:\\laragon\\www\\schoolvoetbal4s\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj": {
+    "C:\\laragon\\www\\schoolvoetbal4s\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj",
+        "projectUniqueName": "C:\\laragon\\www\\schoolvoetbal4s\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj",
         "projectName": "FootballAppBeta",
-        "projectPath": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj",
+        "projectPath": "C:\\laragon\\www\\schoolvoetbal4s\\FootballAppBeta\\FootballAppBeta\\FootballAppBeta.csproj",
         "packagesPath": "C:\\Users\\martw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\martw\\RiderProjects\\FootballAppBeta\\FootballAppBeta\\obj\\",
+        "outputPath": "C:\\laragon\\www\\schoolvoetbal4s\\FootballAppBeta\\FootballAppBeta\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

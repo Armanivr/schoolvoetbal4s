@@ -30,6 +30,7 @@ namespace FootballAppBeta
             this.InitializeComponent();
             apiReader = new ApiReader();
             LoadGames();
+            ShowUserBalance();
         }
         private void ChangePagePutMoney(object sender, RoutedEventArgs e)
         {
@@ -51,6 +52,12 @@ namespace FootballAppBeta
             GamesListView.ItemsSource = games;
             
 
+        }
+        public void ShowUserBalance()
+        {
+            MyDbContext dbContext = new MyDbContext();
+            var user = dbContext.Users.FirstOrDefault(u => u.Id == 1);
+            Balance.Text = "Balans: " + user.balance.ToString() + "coints";
         }
     }
 }
