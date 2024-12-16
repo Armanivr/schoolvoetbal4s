@@ -5,6 +5,7 @@ use App\Http\Controllers\GoalController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,6 +39,9 @@ Route::middleware('auth')->group(function () {
     //homepage
     Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
     Route::get('/inschrijven', [PagesController::class, 'register'])->name('register');
+
+    //team
+    Route::post('/team/register', [TeamController::class, 'store'])->name('team.store');
 });
 
 require __DIR__.'/auth.php';

@@ -98,7 +98,7 @@
                 <h1 class="font-semibold">Inschrijven</h1>
                 <div class="flex flex-col items-start space-y-0">
                     <div class="flex justify-center underline flex-row text-center items-center group">
-                        <a href="">Inschrijven Team </a>
+                        <a href="inschrijven">Inschrijven Team </a>
                         <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
                     </div>
                 </div>
