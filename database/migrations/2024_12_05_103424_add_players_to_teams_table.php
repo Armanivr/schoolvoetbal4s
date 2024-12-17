@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->json('players')->nullable();
+        Schema::create('players', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('team_id');
+            $table->timestamps();
+
+
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
         });
     }
 
@@ -21,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->dropColumn('players');
-        });
+        Schema::dropIfExists('players');
     }
 };

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use App\Models\Team;
+use App\Models\Player;
 
 class TeamController extends Controller
 {
@@ -14,30 +16,26 @@ class TeamController extends Controller
 
     }
 
-    public function store(request $request){
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'stock' => 'required|integer',
-            'category' => 'required|string|max:255',
-        ]);
-
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('product_images', 'public');
-        }
-
-        Team::create([
-            'image' => $imagePath,
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'price' => $request->input('price'),
-            'stock' => $request->input('stock'),
-            'category' => $request->input('category'),
-            'seller_id' => Auth::id(),
-        ]);
-
-        return redirect()->back()->with('success', 'Product aangemaakt.');
+        public function create(){
+            return view('teamRegister');
     }
+    public function addTeams(Request $request){
+            $newTeam = new Team;
+            $newTeam->name = $request->name;
+            $newTeam->hometown = $request->hometown;
+            $newTeam->goals = $request->goals;
+            $newTeam->save();
+            return redirect()->route('createTeam');
+        }
+        public function createMember(){
+            return view('memberRegister');
+    }
+    public function addMember(Request $request){
+            $newPlayer = new Player;
+            $newPlayer->name = $request->name;
+            $newPlayer->team_id = $request->team_id;
+            $newPlayer->save();
+            return redirect()->route('createMember');
+    >>>>>>> bd3e1b0e988d55dbe27cf4d5303f2b4bec45aab2
+        }
 }

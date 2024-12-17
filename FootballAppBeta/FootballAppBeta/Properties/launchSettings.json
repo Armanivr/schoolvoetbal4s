@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FootballAppBeta (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "FootballAppBeta (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

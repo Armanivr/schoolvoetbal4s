@@ -32,16 +32,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/goalpage', [GoalController::class, 'index']);
-    Route::get('/getdata', [ApiController::class, 'getdata']);
-    Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->name('AddGoal');
-    Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->name('UpdateGoal');
+    Route::get('/getdata', [ApiController::class, 'getdata'])->middleware('auth');
+    Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->name('AddGoal')->middleware('auth');
+    Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->name('UpdateGoal')->middleware('auth');
 
     //homepage
     Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
     Route::get('/inschrijven', [PagesController::class, 'register'])->name('register');
 
-    //team
-    Route::post('/team/register', [TeamController::class, 'store'])->name('team.store');
+    Route::get('/teamRegister', [TeamController::class, 'create'])->name('createTeam')->middleware('auth');
+    Route::post('/teamRegister', [TeamController::class, 'addTeams'])->name('addTeam')->middleware('auth');
+
+    Route::get('/memberRegister', [TeamController::class, 'createMember'])->name('createMember')->middleware('auth');
+    Route::post('/memberRegister', [TeamController::class, 'addMember'])->name('addMember')->middleware('auth');
 });
 
 require __DIR__.'/auth.php';
