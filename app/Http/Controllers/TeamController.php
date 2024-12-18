@@ -37,10 +37,19 @@ class TeamController extends Controller
 
     }
     public function addMember(Request $request){
-            $newPlayer = new Player;
-            $newPlayer->name = $request->name;
-            $newPlayer->team_id = $request->team_id;
-            $newPlayer->save();
-            return redirect()->route('createMember');
+   $validated = $request->validate([
+    'name' => 'required|string|max:255',
+    'team_id' => 'required|exists:teams,id', // Ensure team_id exists in the teams table
+]);
+
+
+$newPlayer = new Player;
+$newPlayer->name = $validated['name'];
+$newPlayer->team_id = $validated['team_id'];
+
+$newPlayer->save();
+
+
+return redirect()->route('createMember')->with('success', 'Player added successfully.');
         }
 }
