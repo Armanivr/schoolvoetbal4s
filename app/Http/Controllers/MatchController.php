@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Matchh;
 use Illuminate\Http\Request;
 use App\Models\Team;
+use App\Models\Tournament;
+use Illuminate\Support\Facades\Auth;
+
 class MatchController extends Controller
 {
     public function index()
