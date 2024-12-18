@@ -1,1 +1,0 @@
-C:\Users\martw\RiderProjects\FootballAppBeta\FootballAppBeta\FootballAppBeta.csproj;x64

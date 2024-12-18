@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://kit.fontawesome.com/a781d73fe4.js" crossorigin="anonymous"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Document</title>
+    <title>BalPlein | Zet in en win</title>
 </head>
 <body>
     <header class="bg-[#1F7A8C] shadow-md shadow-gray-400 flex justify-evenly items-center border-b border-[#1f7a8ce5] p-2 fixed w-[100%]">
@@ -25,11 +25,10 @@
     <main>
         {{ $slot }}
     </main>
-    <footer class="bg-[#1F7A8C] shadow-md shadow-gray-400 flex justify-evenly items-center border-t p-2 text-white fixed bottom-0 w-full">
-        
-        <div class="">
-            <div class="">
-                <p>&copy; 2024 BalPlein. All rights</p>
+    <footer class="bg-[#1F7A8C] shadow-md shadow-gray-400 flex justify-evenly border-t p-2 text-white fixed bottom-0 w-full">
+        <div class="flex justify-between items-center w-[80%]">
+            <p>&copy; 2024 BalPlein</p>
+            <div>
                 <p>Privacy Policy</p>
                 <p>Terms of Service</p>
             </div>
