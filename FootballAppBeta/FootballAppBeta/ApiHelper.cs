@@ -25,6 +25,77 @@ namespace FootballAppBeta
 
                 using (var dbContext = new MyDbContext())
                 {
+                    var gamblingTurns = dbContext.GamblingTurns
+                        .Where(turn => turn.isActive == 1) // Alleen actieve beurten ophalen
+                        .ToList();
+
+                    var results = new List<string>();
+                    var tourmentSpending = new Dictionary<int, int>();
+
+                    foreach (var turn in gamblingTurns)
+                    {
+                        bool won = int.TryParse(turn.TeamId, out int teamId) && teamId == winnerId;
+                        int amount = turn.moneyForGambling;
+
+                        int currentSpending = tourmentSpending.ContainsKey(turn.TourmentId)
+                            ? tourmentSpending[turn.TourmentId]
+                            : 0;
+
+                        int remaining = 50 - currentSpending;
+
+                        if (amount > remaining)
+                        {
+                            amount = remaining;
+                        }
+
+                        if (tourmentSpending.ContainsKey(turn.TourmentId))
+                        {
+                            tourmentSpending[turn.TourmentId] += amount;
+                        }
+                        else
+                        {
+                            tourmentSpending[turn.TourmentId] = amount;
+                        }
+
+                        int adjustedAmount = won ? amount * 2 : -amount;
+                        string result = GenerateLogEntry(turn.TeamId, won, adjustedAmount);
+                        results.Add(result);
+
+                        Balance(dbContext, 1, adjustedAmount);
+
+                        // Zet de turn op inactief na verwerking
+                        turn.isActive = 0;
+                    }
+
+                    // Opslaan van wijzigingen in de database
+                    dbContext.SaveChanges();
+
+                    // Schrijf resultaten naar bestand
+                    using (StreamWriter writer = new StreamWriter(@"C:\\Users\martw\RiderProjects\FootballAppBeta\FootballAppBeta\balance.txt"))
+                    {
+                        foreach (var result in results)
+                        {
+                            writer.WriteLine(result);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error during API and database comparison: {ex.Message}");
+            }
+        }
+
+        public void ApiDatabaseComparingBeta2()
+        {
+            try
+            {
+                ApiReader apiReader = new ApiReader();
+                var games = apiReader.GetGames();
+                int winnerId = games.FirstOrDefault()?.winner_id ?? 0;
+
+                using (var dbContext = new MyDbContext())
+                {
                     var gamblingTurns = dbContext.GamblingTurns.ToList();
                     var results = new List<string>();
 
@@ -156,10 +227,6 @@ namespace FootballAppBeta
         {
             string result = won ? "winst" : "verlies";
             return $"Team {teamId} heeft {result}: {amount} op {DateTime.Now}";
-        }
-        private void Balance()
-        {
-            
         }
 
     }

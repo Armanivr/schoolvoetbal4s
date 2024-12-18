@@ -11,5 +11,6 @@ namespace FootballAppBeta
         public int Id { get; set; }
         public string name { get; set; }
         public float balance { get; set; }
+
     }
 }

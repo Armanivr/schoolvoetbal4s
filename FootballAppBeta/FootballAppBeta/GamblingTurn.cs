@@ -14,5 +14,6 @@ namespace FootballAppBeta
 
         public int moneyForGambling { get; set; }
         public int TourmentId { get; set; }
+        public int isActive { get; set; }
     }
 }

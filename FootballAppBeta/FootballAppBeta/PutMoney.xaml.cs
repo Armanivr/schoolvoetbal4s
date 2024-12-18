@@ -39,7 +39,7 @@ namespace FootballAppBeta
             {
                 if (chance < 1)
                 {
-                    error.Text = "Voer een getal hoger and 1 in";
+                    error.Text = "Voer het bedrag hoger and 1 in";
                 }
                 using (var context = new MyDbContext())
                 {
@@ -63,7 +63,7 @@ namespace FootballAppBeta
             }
             else
             {
-                error.Text = "Voer een geldig getal in";
+                error.Text = "Voer een geldig bedrag in";
             }
 
         }
