@@ -11,9 +11,7 @@
                             <label for="tournament" class="block text-sm font-medium text-022B3A">Tournament:</label>
                             <select id="tournament" name="tournament" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
                                 <option>Select Tournament</option>
-                                @foreach($tournaments as $tournament)
-                                    <option value="{{ $tournament->id }}">{{ $tournament->name }}</option>
-                                @endforeach
+                                {{-- foreach tournament in tournament --}}
                             </select>
                         </div>
 
@@ -47,7 +45,7 @@
                     </div>
 
                     <div class="mt-6 flex justify-evenly">
-                        <a href="javascript: history.go(-1)" class="bg-BFDBF7 text-022B3A font-medium px-4 py-2 rounded-md hover:bg-1F7A8C hover:underline">Annuleren</a>
+                        <button type="button" class="bg-BFDBF7 text-022B3A font-medium px-4 py-2 rounded-md hover:bg-1F7A8C hover:underline">Annuleren</button>
                         <button type="submit" class="bg-022B3A text-black font-medium px-4 py-2 rounded-md hover:bg-1F7A8C hover:underline">Aanmelden</button>
                     </div>
                 </form>

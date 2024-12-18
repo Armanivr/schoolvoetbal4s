@@ -21,9 +21,4 @@ class PagesController extends Controller
     public function register(){
         return view('teamRegister');
     }
-
-    public function adminPanel(){
-        $user = auth()->user();
-        return view('adminPanel', compact('user'));
-    }
 }

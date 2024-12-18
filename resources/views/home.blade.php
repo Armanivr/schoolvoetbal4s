@@ -81,33 +81,28 @@
                 <p>Geen wedstrijd op dit moment</p>
                 @endif
             </div>
-            @auth
-                <div class="bg-white border border-gray-400 p-10 m-5">
-                    <h1 class="font-semibold">Welkom, {{ \Illuminate\Support\Str::limit(explode(' ', Auth::user()->name)[0], 10, '...') }}</h1>
-                    <div class="flex flex-col items-start space-y-0">
-                        <div class="flex justify-center underline flex-row text-center items-center group">
-                            <a href="{{route('adminPanel')}}">Beheerder Paneel </a>
-                            <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
-                        </div>
-                        <div class="flex justify-center underline flex-row text-center items-center group">
-                            <a href="">Schijdsrechter paneel </a>
-                            <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
-                        </div>
+            <div class="bg-white border border-gray-400 p-10 m-5">
+                <h1 class="font-semibold">Welkom, {{ \Illuminate\Support\Str::limit(explode(' ', Auth::user()->name)[0], 10, '...') }}</h1>
+                <div class="flex flex-col items-start space-y-0">
+                    <div class="flex justify-center underline flex-row text-center items-center group">
+                        <a href="">Beheerder Paneel </a>
+                        <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
+                    </div>
+                    <div class="flex justify-center underline flex-row text-center items-center group">
+                        <a href="">Schijdsrechter paneel </a>
+                        <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
                     </div>
                 </div>
-                <div class="bg-white border border-gray-400 p-10 m-5">
-                    <h1 class="font-semibold">Inschrijven</h1>
-                    <div class="flex flex-col items-start space-y-0">
-                        <div class="flex justify-center underline flex-row text-center items-center group">
-                            <a href="inschrijven">Inschrijven Team </a>
-                            <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
-                        </div>
+            </div>
+            <div class="bg-white border border-gray-400 p-10 m-5">
+                <h1 class="font-semibold">Inschrijven</h1>
+                <div class="flex flex-col items-start space-y-0">
+                    <div class="flex justify-center underline flex-row text-center items-center group">
+                        <a href="inschrijven">Inschrijven Team </a>
+                        <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
                     </div>
                 </div>
-            @endauth
-            @guest
-            <a class="bg-[#1F7A8C] mt-3 p-3 rounded text-white text-lg shadow-md shadow-gray-400 hover:shadow-sm hover:shadow-gray-400 transition-all ease-in delay-50 flex self-center items-center w-[80%]" href="register">Registreren</a>            
-            @endguest
+            </div>
         </div>
     </div>
 </x-base-layout>
