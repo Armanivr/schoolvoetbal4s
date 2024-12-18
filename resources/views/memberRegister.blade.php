@@ -20,12 +20,11 @@
                 </div> --}}
 
                 <div>
-                    <label for="name" class="block text-sm font-medium text-022B3A">Teamnaam:</label>
+                    <label for="name" class="block text-sm font-medium text-022B3A">Naam speler:</label>
                     <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
                 </div>
                 <div>
-                    <label for="hometown" class="block text-sm font-medium text-022B3A">Team Id:</label>
-                    <input type="text" id="team_id" name="team_id" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                    <input name="team_id" value="{{ $selectedTeam }}" type="hidden" />
                 </div>
 
 

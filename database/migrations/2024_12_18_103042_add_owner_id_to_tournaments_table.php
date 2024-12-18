@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tournaments', function (Blueprint $table) {
-            $table->json('teams')->nullable()->default(null)->change();
+        Schema::table('teams', function (Blueprint $table) {
+            $table->unsignedBigInteger('owner_id');
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -21,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tournaments', function (Blueprint $table) {
-            $table->json('teams')->nullable(false)->change();
+        Schema::table('teams', function (Blueprint $table) {
+            $table->dropForeign(['owner_id']);
         });
     }
 };

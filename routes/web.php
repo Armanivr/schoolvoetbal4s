@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('/', [PagesController::class, 'index'])->middleware('auth')->name('home');
 
 Route::get('/dashboard', function () {
-    return redirect()->route('home');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -38,9 +38,10 @@ Route::middleware('auth')->group(function () {
 
     //homepage
     Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
-    Route::get('/inschrijven', [PagesController::class, 'register'])->name('register')->name('team.register');
+    Route::get('/inschrijven', [PagesController::class, 'register'])->name('register');
 
-    Route::post('/teamRegister', [TeamController::class, 'addTeams'])->name('team.register')->middleware('auth');
+    Route::get('/teamRegister', [TeamController::class, 'create'])->name('createTeam')->middleware('auth');
+    Route::post('/teamRegister', [TeamController::class, 'addTeams'])->name('addTeam')->middleware('auth');
 
     Route::get('/memberRegister', [TeamController::class, 'createMember'])->name('createMember')->middleware('auth');
     Route::post('/memberRegister', [TeamController::class, 'addMember'])->name('addMember')->middleware('auth');

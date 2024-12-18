@@ -24,9 +24,4 @@ class PagesController extends Controller
         $tournaments = Tournament::all();
         return view('teamRegister', compact('tournaments'));
     }
-
-    public function adminPanel(){
-        $user = auth()->user();
-        return view('adminPanel', compact('user'));
-    }
 }
