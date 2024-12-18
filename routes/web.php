@@ -35,6 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/getdata', [ApiController::class, 'getdata'])->middleware('auth');
     Route::get('/Addpage/{goal}', [GoalController::class, 'AddGoal'])->name('AddGoal')->middleware('auth');
     Route::post('/goalAdd', [GoalController::class, 'UpdateGoal'])->name('UpdateGoal')->middleware('auth');
+    Route::get('/costumerInfo', function(){
+        view('costumerInfo');
+    })->middleware('auth')->name('info');
+
 
     //homepage
     Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
