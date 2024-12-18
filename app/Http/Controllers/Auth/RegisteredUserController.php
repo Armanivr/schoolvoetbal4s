@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Team;
 
 class RegisteredUserController extends Controller
 {
@@ -30,6 +31,11 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // hierkomen de basic gegevens
+        $newTeam = new Team();
+        $newTeam->name = "Gebruikersnaam";
+        $newTeam->hometown = "Hometown";
+        $newTeam->goals = 0;
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
@@ -45,7 +51,8 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        $newTeam->owner_id = Auth::id();
+        $newTeam->save();
+        return redirect()->route('home');
     }
 }

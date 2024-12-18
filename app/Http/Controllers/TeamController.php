@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
-use App\Models\Team;
 use App\Models\Player;
-
+use Illuminate\Support\Facades\Auth;
 class TeamController extends Controller
 {
     //
@@ -28,7 +27,14 @@ class TeamController extends Controller
             return redirect()->route('createTeam');
         }
         public function createMember(){
-            return view('memberRegister');
+            $teams = Team::all();
+            foreach($teams as $team){
+                if($team->owner_id == Auth::id()){
+                    $selectedTeam = $team->owner_id;
+                    return view('memberRegister')->with('selectedTeam', $selectedTeam);
+                }
+            }
+
     }
     public function addMember(Request $request){
             $newPlayer = new Player;
@@ -36,6 +42,5 @@ class TeamController extends Controller
             $newPlayer->team_id = $request->team_id;
             $newPlayer->save();
             return redirect()->route('createMember');
-    >>>>>>> bd3e1b0e988d55dbe27cf4d5303f2b4bec45aab2
         }
 }
