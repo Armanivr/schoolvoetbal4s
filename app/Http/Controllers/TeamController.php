@@ -6,7 +6,7 @@ use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Models\Player;
 use App\Models\Tournament;
-use Illuminate\Support\Facades\Auth;
+
 class TeamController extends Controller
 {
     //

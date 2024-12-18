@@ -12,6 +12,6 @@ class Tournament extends Model
     protected $fillable = ['name', 'start_date', 'teams', 'admin', 'location'];
 
     protected $casts = [
-        'teams' => 'array', // Cast the JSON column to an array
+        'teams' => 'array', 
     ];
 }
