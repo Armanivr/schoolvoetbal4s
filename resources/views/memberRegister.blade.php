@@ -19,13 +19,7 @@
                     <input type="text" id="coach-name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
                 </div> --}}
 
-                <div>
-                    <label for="name" class="block text-sm font-medium text-022B3A">Naam speler:</label>
-                    <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
-                </div>
-                <div>
-                    <input name="team_id" value="{{ $selectedTeam }}" type="hidden" />
-                </div>
+
 
 
                 {{-- <div>
@@ -45,6 +39,13 @@
                     <span class="text-sm text-gray-500">Preview</span>
                 </div>
                 </div> --}}
+                <div>
+                    <label for="name" class="block text-sm font-medium text-022B3A">Naam speler:</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                </div>
+                <div>
+                    <input name="team_id" value="{{ $selectedTeam }}" type="hidden" />
+                </div>
                 <input type="submit">
                 {{-- <button type="submit" class="bg-022B3A text-white font-medium px-4 py-2 rounded-md hover:bg-1F7A8C">Aanmelden</button> --}}
             </form>
@@ -57,3 +58,4 @@
         </main>
     </body>
 </x-base-layout>
+

@@ -27,29 +27,27 @@ class TeamController extends Controller
             return redirect()->route('createTeam');
         }
         public function createMember(){
-            $teams = Team::all();
-            foreach($teams as $team){
-                if($team->owner_id == Auth::id()){
-                    $selectedTeam = $team->owner_id;
+            // $teams = Team::all();
+            // foreach($teams as $team){
+            //     if($team->owner_id == Auth::id()){
+                   // $selectedTeam = $team->owner_id;
+                   $selectedTeam = Team::where('owner_id', Auth::id())->first();
                     return view('memberRegister')->with('selectedTeam', $selectedTeam);
-                }
+                // }
             }
 
-    }
+
     public function addMember(Request $request){
-   $validated = $request->validate([
-    'name' => 'required|string|max:255',
-    'team_id' => 'required|exists:teams,id', // Ensure team_id exists in the teams table
-]);
-
-
-$newPlayer = new Player;
-$newPlayer->name = $validated['name'];
-$newPlayer->team_id = $validated['team_id'];
-
-$newPlayer->save();
-
-
-return redirect()->route('createMember')->with('success', 'Player added successfully.');
-        }
+   //     $team = Team::find($request->team_id);
+        $selectedTeam = Team::where('owner_id', Auth::id())->first();
+        $newPlayer = new Player();
+        $newPlayer->name = $request->name;
+        $newPlayer->team_id = $selectedTeam->id;
+        $newPlayer->save();
+if ($newPlayer->save()) {
+    return redirect()->route('createMember')->with('success', 'Player added successfully.');
+} else {
+    return redirect()->route('createMember')->with('error', 'Failed to add player. Please try again.');
 }
+        }
+    }
