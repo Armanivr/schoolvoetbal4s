@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Models\Player;
+use App\Models\Tournament;
 use Illuminate\Support\Facades\Auth;
 class TeamController extends Controller
 {
@@ -15,17 +16,18 @@ class TeamController extends Controller
 
     }
 
-        public function create(){
-            return view('teamRegister');
-    }
-    public function addTeams(Request $request){
-            $newTeam = new Team;
-            $newTeam->name = $request->name;
-            $newTeam->hometown = $request->hometown;
-            $newTeam->goals = $request->goals;
-            $newTeam->save();
-            return redirect()->route('createTeam');
+        public function create()
+        {
+            $tournaments = Tournament::all(); // Retrieve all tournaments from the database
+            return view('teamRegister', compact('tournaments'));
         }
+    public function addTeams(Request $request)
+    {
+        
+
+        return redirect()->route('createTeam');
+
+    }
         public function createMember(){
             // $teams = Team::all();
             // foreach($teams as $team){

@@ -45,6 +45,22 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/memberRegister', [TeamController::class, 'createMember'])->name('createMember')->middleware('auth');
     Route::post('/memberRegister', [TeamController::class, 'addMember'])->name('addMember')->middleware('auth');
+
+    Route::get('/adminPanel', [PagesController::class, 'adminPanel'])->name('adminPanel')->middleware('auth');
+
+    //tournament aanmaken
+    Route::get('/tournament/create', [MatchController::class, 'create'])->name('tournament.create')->middleware('auth');
+    Route::post('/tournament/create', [MatchController::class, 'store'])->name('tournament.store')->middleware('auth');
+
+    //tournament beheren
+    Route::get('/tournament/manage', [MatchController::class, 'manage'])->name('tournament.manage')->middleware('auth');
+    Route::patch('/tournament/update/{tournament}', [MatchController::class, 'update'])->name('tournament.update')->middleware('auth');
+    Route::delete('/tournament/delete/{tournament}', [MatchController::class, 'destroy'])->name('tournament.destroy')->middleware('auth');
+    //tournament laten zien
+    Route::get('/tournament/{tournament}', [MatchController::class, 'show'])->name('tournament.show')->middleware('auth');
+
+    //Team beheren
+    Route::get('/team/{team}', [TeamController::class, 'show'])->name('team.show')->middleware('auth');
 });
 
 require __DIR__.'/auth.php';

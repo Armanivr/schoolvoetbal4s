@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Tournament;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -10,7 +11,8 @@ class PagesController extends Controller
     public function index()
     {
         $games = Game::all();
-        return view('home', compact('games'));
+        $tournaments = Tournament::all();
+        return view('home', compact('games', 'tournaments'));
     }
 
     public function matches(){
@@ -19,6 +21,7 @@ class PagesController extends Controller
     }
 
     public function register(){
-        return view('teamRegister');
+        $tournaments = Tournament::all();
+        return view('teamRegister', compact('tournaments'));
     }
 }
