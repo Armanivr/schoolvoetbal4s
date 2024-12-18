@@ -9,9 +9,9 @@ class Tournament extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'teams', 'admin', 'winner', 'start_date']; 
+    protected $fillable = ['name', 'start_date', 'teams', 'admin', 'location'];
 
     protected $casts = [
-        'teams' => 'array', 
+        'teams' => 'array', // Cast the JSON column to an array
     ];
 }

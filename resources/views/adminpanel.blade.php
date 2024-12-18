@@ -5,9 +5,9 @@
             $user = Auth::user();
         @endphp
 
-        @if($user && $user->is_admin = 1)
+        @if($user && $user->is_admin == 1)
             <a href="{{ route('tournament.create') }}" class="my-2 text-black font-bold hover:underline">Maak Tournamenten</a>
-            <a href="" class="my-2 text-black font-bold hover:underline">Beheer Tournamenten</a>
+            <a href="{{ route('tournament.manage')}}" class="my-2 text-black font-bold hover:underline">Beheer Tournamenten</a>
         @endif
 
         <a href="" class="my-2 text-black font-bold hover:underline">Beheer je Team</a>

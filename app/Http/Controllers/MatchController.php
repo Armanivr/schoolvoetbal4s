@@ -25,15 +25,56 @@ class MatchController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'start_date' => 'required|date', // Add validation for start_date
+            'start_date' => 'required|date',
+            'teams' => 'required|array',
+            'teams.*' => 'exists:teams,id',
         ]);
-    
-        Tournament::create([
+
+        $tournament = Tournament::create([
             'name' => $request->input('name'),
-            'start_date' => $request->input('start_date'), // Store the start date
-            'admin' => Auth::id(), // Store the current logged-in user ID
+            'start_date' => $request->input('start_date'),
+            'teams' => $request->input('teams'),
+            'admin' => Auth::id(),
         ]);
-    
-        return redirect()->route('adminPanel')->with('success', 'Tournament successfully created!');
+
+        return redirect()->back()->with('success', 'Tournament successfully created!');
+    }
+
+    public function show($id)
+    {
+        $tournament = Tournament::findOrFail($id);
+        return view('tournament.show', compact('tournament'));
+    }
+
+    public function manage(Tournament $tournament)
+    {
+        $tournaments = Tournament::where('admin', Auth::id())->get();
+        return view('tournament.manage', compact('tournaments'));
+    }
+
+    public function update(Request $request, Tournament $tournament)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'teams' => 'required|array',
+            'teams.*' => 'exists:teams,id',
+            'location' => 'required|string|max:255',
+        ]);
+
+        $tournament->update([
+            'name' => $request->input('name'),
+            'start_date' => $request->input('start_date'),
+            'teams' => $request->input('teams'),
+            'location' => $request->input('location'),
+        ]);
+
+        return redirect()->back()->with('success', 'Tournament successfully updated!');
+    }
+
+    public function destroy(Tournament $tournament)
+    {
+        $tournament->delete();
+        return redirect()->route('tournament.manage')->with('success', 'Tournament successfully deleted!');
     }
 }

@@ -21,20 +21,13 @@ class TeamController extends Controller
             $tournaments = Tournament::all(); // Retrieve all tournaments from the database
             return view('teamRegister', compact('tournaments'));
         }
-    // public function addTeams(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'coach' => 'required|string|max:255',
-    //     ]);
+    public function addTeams(Request $request)
+    {
+        
 
-    //     Team::create([
-    //         'name' => $request->input('name'),
-    //         'coach' => $request->input('coach'),
-    //     ]);
+        return redirect()->route('createTeam');
 
-    //     return redirect()->back()->with('success', 'Team successfully added!');
-    // }
+    }
         public function createMember(){
             return view('memberRegister');
     }

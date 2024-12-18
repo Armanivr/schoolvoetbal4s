@@ -18,18 +18,8 @@
                         </div>
 
                         <div>
-                            <label for="coach-name" class="block text-sm font-medium text-022B3A">Coachnaam:</label>
-                            <input type="text" id="coach-name" name="coach_name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
-                        </div>
-
-                        <div>
                             <label for="team-name" class="block text-sm font-medium text-022B3A">Teamnaam:</label>
                             <input type="text" id="team-name" name="team_name" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
-                        </div>
-
-                        <div>
-                            <label for="team-members" class="block text-sm font-medium text-022B3A">Teamleden:</label>
-                            <textarea id="team-members" name="team_members" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md p-2"></textarea>
                         </div>
 
                         <div>

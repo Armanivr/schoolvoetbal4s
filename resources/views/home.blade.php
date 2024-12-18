@@ -81,6 +81,23 @@
                 <p>Geen wedstrijd op dit moment</p>
                 @endif
             </div>
+
+            <div class="bg-white border border-gray-400 p-5 flex flex-col justify-center text-center m-5">
+                <h3 class="font-semibold">Tournamenten</h3>
+                @if ($tournaments->isNotEmpty())
+                    @foreach ($tournaments->take(3) as $tournament)
+                        <div class="flex justify-evenly mt-5">
+                            <div class="flex justify-center flex-col m-4">
+                                <a href="{{ route('tournament.show', ['tournament' => $tournament->id]) }}" class="text-md ml-4">{{ \Illuminate\Support\Str::limit($tournament->name, 20, '...') }}</a>
+                                <p class="text-sm">{{ \Carbon\Carbon::parse($tournament->date)->format('d/m/Y') }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Geen toernooien beschikbaar</p>
+                @endif
+            </div>
+
             @auth
                 <div class="bg-white border border-gray-400 p-10 m-5">
                     <h1 class="font-semibold">Welkom, {{ \Illuminate\Support\Str::limit(explode(' ', Auth::user()->name)[0], 10, '...') }}</h1>
@@ -93,20 +110,15 @@
                             <a href="">Schijdsrechter paneel </a>
                             <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
                         </div>
-                    </div>
-                </div>
-                <div class="bg-white border border-gray-400 p-10 m-5">
-                    <h1 class="font-semibold">Inschrijven</h1>
-                    <div class="flex flex-col items-start space-y-0">
                         <div class="flex justify-center underline flex-row text-center items-center group">
-                            <a href="inschrijven">Inschrijven Team </a>
+                            <a href="inschrijven">Team Inschrijven </a>
                             <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
                         </div>
                     </div>
                 </div>
             @endauth
             @guest
-            <a class="bg-[#1F7A8C] mt-3 p-3 rounded text-white text-lg shadow-md shadow-gray-400 hover:shadow-sm hover:shadow-gray-400 transition-all ease-in delay-50 flex self-center items-center w-[80%]" href="register">Registreren</a>            
+                <a class="bg-[#1F7A8C] mt-3 p-3 rounded text-white text-lg shadow-md shadow-gray-400 hover:shadow-sm hover:shadow-gray-400 transition-all ease-in delay-50 flex self-center items-center w-[80%]" href="register">Registreren</a>        
             @endguest
         </div>
     </div>

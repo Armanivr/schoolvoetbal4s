@@ -13,6 +13,15 @@
                 <label for="start_date" class="block text-gray-700 font-bold mb-2">Start Datum:</label>
                 <input type="date" id="start_date" name="start_date" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4">
             </div>
+            <div class="mb-4">
+                <label for="teams" class="block text-gray-700 font-bold mb-2">Teams:</label>
+                @foreach($teams as $team)
+                    <div class="mb-2">
+                        <input type="checkbox" id="team-{{ $team->id }}" name="teams[]" value="{{ $team->id }}" class="mr-2 leading-tight">
+                        <label for="team-{{ $team->id }}" class="text-gray-700">{{ $team->teamname }}</label>
+                    </div>
+                @endforeach
+            </div>
             <button type="submit" class="hover:underline text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Maak Tournament</button>
         </form>
     </div>
