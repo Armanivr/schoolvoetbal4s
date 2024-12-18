@@ -10,6 +10,6 @@
             <a href="{{ route('tournament.manage')}}" class="my-2 text-black font-bold hover:underline">Beheer Tournamenten</a>
         @endif
 
-        <a href="" class="my-2 text-black font-bold hover:underline">Beheer je Team</a>
+        <a href="{{ route('team.show') }}" class="my-2 text-black font-bold hover:underline">Beheer je Team</a>
     </div>
 </x-base-layout>

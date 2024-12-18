@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('start_date')->nullable();
             $table->json('teams')->nullable()->default(null)->change();
             $table->string('location')->nullable();
-            $table->unsignedBigInteger('owner_id');
+            $table->unsignedBigInteger('owner_id')->nullable();
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

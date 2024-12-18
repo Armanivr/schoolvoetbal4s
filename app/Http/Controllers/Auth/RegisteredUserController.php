@@ -48,6 +48,7 @@ class RegisteredUserController extends Controller
         Team::create([
             'teamname' => $request->input('teamname'),
             'coach' => $request->input('coach'),
+            'owner_id' => $user->id,
         ]);
 
         event(new Registered($user));
