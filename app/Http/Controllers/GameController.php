@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Team;
+use App\Models\Tournament;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
     //
     public function index(){
-        return view('home');
+        $games = Game::all();
+        $tournaments = Tournament::all();
+        return view('home')->with('games', $games)->with('tournaments', $tournaments);
     }
     public function games(){
         $teams = Team::all();
