@@ -118,6 +118,10 @@
                             <a href="{{ route('addMember') }}">Team leden toevoegen </a>
                             <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
                         </div>
+                        <div class="flex justify-center underline flex-row text-center items-center group">
+                            <a href="{{ route('info') }}">Team Inschrijven </a>
+                            <img class="h-4 transition-transform duration-300 transform group-hover:translate-x-1" src="{{ asset('images/chevron_right.png') }}" alt="">
+                        </div>
                     </div>
                 </div>
             @endauth

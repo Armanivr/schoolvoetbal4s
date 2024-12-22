@@ -64,8 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/tournament/{tournament}', [MatchController::class, 'show'])->name('tournament.show')->middleware('auth');
 
     //Team beheren
-    Route::get('/team/show', [TeamController::class, 'show'])->name('team.show')->middleware('auth');
-    Route::patch('/team/update/{team}', [TeamController::class, 'update'])->name('team.update')->middleware('auth');
+    Route::get('/team/{team}', [TeamController::class, 'show'])->name('team.show')->middleware('auth');
 });
 
 require __DIR__.'/auth.php';

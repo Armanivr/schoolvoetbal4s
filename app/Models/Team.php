@@ -9,9 +9,12 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['teamname', 'coach', 'owner_id'];
+    protected $fillable = ['teamname', 'coach'];
 
     protected $casts = [
         'teams' => 'array', 
     ];
-}
+}    
+
+
+
