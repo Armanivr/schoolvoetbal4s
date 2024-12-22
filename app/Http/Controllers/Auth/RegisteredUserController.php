@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-use App\Models\Team;
 
 class RegisteredUserController extends Controller
 {
@@ -31,15 +31,12 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // hierkomen de basic gegevens
-        $newTeam = new Team();
-        $newTeam->name = "Gebruikersnaam";
-        $newTeam->hometown = "Hometown";
-        $newTeam->goals = 0;
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'teamname' => ['required', 'string', 'max:255'],
+            'coach' => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::create([
@@ -48,11 +45,16 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        Team::create([
+            'teamname' => $request->input('teamname'),
+            'coach' => $request->input('coach'),
+            'owner_id' => $user->id,
+        ]);
+
         event(new Registered($user));
 
         Auth::login($user);
-        $newTeam->owner_id = Auth::id();
-        $newTeam->save();
-        return redirect()->route('home');
+
+        return redirect(RouteServiceProvider::HOME);
     }
 }

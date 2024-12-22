@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PagesController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/', [PagesController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/register', [ProfileController::class, 'create'])->name('profile.create');
 Route::middleware('auth')->group(function () {
@@ -43,10 +43,9 @@ Route::middleware('auth')->group(function () {
 
     //homepage
     Route::get('/wedstrijden', [PagesController::class, 'matches'])->name('matches');
-    Route::get('/inschrijven', [PagesController::class, 'register'])->name('register');
+    Route::get('/inschrijven', [PagesController::class, 'register'])->name('register')->name('team.register');
 
-    Route::get('/teamRegister', [TeamController::class, 'create'])->name('createTeam')->middleware('auth');
-    Route::post('/teamRegister', [TeamController::class, 'addTeams'])->name('addTeam')->middleware('auth');
+    Route::post('/teamRegister', [TeamController::class, 'addTeams'])->name('team.register')->middleware('auth');
 
     Route::get('/memberRegister', [TeamController::class, 'createMember'])->name('createMember')->middleware('auth');
     Route::post('/memberRegister', [TeamController::class, 'addMember'])->name('addMember')->middleware('auth');
@@ -65,7 +64,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/tournament/{tournament}', [MatchController::class, 'show'])->name('tournament.show')->middleware('auth');
 
     //Team beheren
-    Route::get('/team/{team}', [TeamController::class, 'show'])->name('team.show')->middleware('auth');
+    Route::get('/team/show', [TeamController::class, 'show'])->name('team.show')->middleware('auth');
+    Route::patch('/team/update/{team}', [TeamController::class, 'update'])->name('team.update')->middleware('auth');
 });
 
 require __DIR__.'/auth.php';

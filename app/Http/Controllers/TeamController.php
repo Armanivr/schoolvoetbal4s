@@ -7,14 +7,41 @@ use Illuminate\Http\Request;
 use App\Models\Player;
 use App\Models\Tournament;
 use Illuminate\Support\Facades\Auth;
+
 class TeamController extends Controller
 {
-    //
-    public function index(){
 
-
-
+    public function show()
+    {
+        $team = Team::where('owner_id', Auth::id())->firstOrFail();
+        return view('team.show', compact('team'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'coach' => 'required|string|max:255',
+            'goals' => 'required|integer',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $team = Team::findOrFail($id);
+        $team->name = $request->input('name');
+        $team->coach = $request->input('coach');
+        $team->goals = $request->input('goals');
+
+        if ($request->hasFile('logo')) {
+            $filePath = $request->file('logo')->store('team_logos', 'public');
+            $team->logo = $filePath;
+        }
+
+        $team->save();
+
+        return redirect()->route('team.show', $team->id)->with('success', 'Team information updated successfully.');
+    }
+
+
 
         public function create()
         {
@@ -51,5 +78,6 @@ if ($newPlayer->save()) {
 } else {
     return redirect()->route('createMember')->with('error', 'Failed to add player. Please try again.');
 }
+
         }
     }
